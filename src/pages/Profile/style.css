@@ -1,0 +1,22 @@
+.user-container {
+	width: 80%;
+	height: 30vh;
+	margin: auto;
+	background-color: gray;
+	padding: 20px 40px;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.user-container .profile-img {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.user-info {
+	width: 50%;
+	background-color: white;
+}
