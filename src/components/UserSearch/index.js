@@ -15,7 +15,7 @@ export default ({ onSubmit }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form className="user-search" onSubmit={handleSubmit}>
 			<label htmlFor="username">Search for a Github user:</label>
 			<input type="text" name="username" id="username" onChange={handleChange} value={userInput} />
 			<input type="submit" value="Search" />

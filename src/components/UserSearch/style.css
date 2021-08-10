@@ -1,4 +1,4 @@
-form {
+.user-search form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -9,22 +9,22 @@ form {
 	background-color: rgba(255, 255, 255, 0.308);
 }
 
-input,
-label {
+.user-search input,
+.user-search label {
 	border-radius: 5px;
 	font-size: 1.2rem;
 }
-input {
+.user-search input {
 	border: none;
 	outline: none;
 	padding: 5px 10px;
 }
 
-form input:nth-child(2) {
+.user-search form input:nth-child(2) {
 	margin: 20px 0;
 }
 
-input[type='submit'] {
+.user-search input[type='submit'] {
 	color: inherit;
 	background-color: rgba(255, 255, 255, 0.644);
 	cursor: pointer;
@@ -33,13 +33,13 @@ input[type='submit'] {
 	box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.644);
 }
 
-input[type='submit']:hover {
+.user-search input[type='submit']:hover {
 	background-color: rgba(255, 255, 255, 0.95);
 	transform: translate(-1px, -1px);
 	box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.644);
 }
 
-input[type='submit']:active {
+.user-search input[type='submit']:active {
 	transform: none !important;
 	box-shadow: none !important;
 }
