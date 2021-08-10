@@ -3,7 +3,14 @@ import { UserInfo } from '../';
 import './style.css';
 
 export default ({ userData, loading, error, noUsersFound }) => {
-	const users = userData ? userData.map((user, i) => <UserInfo userData={user} key={i} />) : '';
+	const users = userData
+		? userData.map((user, i) => (
+				<>
+					<UserInfo userData={user} key={i} />
+					{i === userData.length - 1 ? '' : <hr />}
+				</>
+		  ))
+		: '';
 
 	return (
 		<ul>
