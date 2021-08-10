@@ -1,10 +1,16 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 export default ({ userData }) => {
+	const { push } = useHistory();
+	const handleClick = () => {
+		push(`/profile/${userData.login}`);
+	};
 	return (
 		<li>
-			<h2>{userData.username}</h2>
-			<img src={userData.imageURL} alt="" />
+			<h2>{userData.login}</h2>
+			<button onClick={handleClick}>See Profile</button>
+			<img src={userData.avatar_url} alt="" />
 		</li>
 	);
 };
