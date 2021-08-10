@@ -24,18 +24,33 @@ export default function Repos({ username }) {
 		};
 	}, []);
 
-	const searchRepos = (searchTerm) => {
-		console.log(searchTerm);
+	const searchRepos = async (searchTerm) => {
+		const newData = await fetchSearchData(searchTerm);
+		setUserRepoList(newData.items);
+	};
+
+	const fetchSearchData = async (searchTerm) => {
+		const queryString = 'q=' + encodeURIComponent(`user:${username} ${searchTerm} in:name`);
+		try {
+			const { data } = await axios.get(`https://api.github.com/search/repositories?${queryString}`);
+			return data;
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
 	return (
-		<div className="repos-container">
+		<>
 			<RepoSearch searchRepos={searchRepos} />
-			{userRepoList.map((repo) => (
-				<Link key={repo.id} to={`/profile/${username}/repos/${repo.id}`}>
-					<h4>{repo.name}</h4>
-				</Link>
-			))}
-		</div>
+			<div className="repos-container">
+				{userRepoList.map((repo) => (
+					<Link key={repo.id} to={`/profile/${username}/repos/${repo.id}`}>
+						<div className="repository">
+							<h4>{repo.name}</h4>
+						</div>
+					</Link>
+				))}
+			</div>
+		</>
 	);
 }
