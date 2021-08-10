@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style.css';
 
 export default ({ onSubmit }) => {
 	const [userInput, setUserInput] = useState('');
@@ -15,9 +16,9 @@ export default ({ onSubmit }) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<label htmlFor="username">Github Username:</label>
+			<label htmlFor="username">Search for a Github user:</label>
 			<input type="text" name="username" id="username" onChange={handleChange} value={userInput} />
-			<input type="submit" />
+			<input type="submit" value="Search" />
 		</form>
 	);
 };

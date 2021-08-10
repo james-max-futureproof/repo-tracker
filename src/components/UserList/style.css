@@ -1,0 +1,19 @@
+ul {
+	list-style-type: none;
+	width: 600px;
+	margin-top: 60px;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 2px 4px 12px rgba(231, 231, 231, 0.644);
+	background-color: rgba(255, 255, 255, 0.308);
+}
+
+ul p {
+	margin: 5px;
+	padding: 5px;
+}
+
+hr {
+	margin: 10px 0;
+	border: 1px solid rgba(255, 255, 255, 0.644);
+}

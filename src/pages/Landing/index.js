@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { UserSearch, UserList } from '../../components';
+import './style.css';
 
 export default () => {
 	const [userData, setUserData] = useState([]);
