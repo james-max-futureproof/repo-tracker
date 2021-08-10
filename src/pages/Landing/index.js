@@ -4,20 +4,28 @@ import { UserSearch, UserList } from '../../components';
 
 export default () => {
 	const [userData, setUserData] = useState([]);
-	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const [isError, setIsError] = useState(false);
+	const [isNoUsersFound, setIsNoUsersFound] = useState(false);
 
 	const onSubmit = async (userName) => {
 		try {
-			setLoading(true);
+			setIsError(false);
+			setIsNoUsersFound(false);
+			setIsLoading(true);
 			const { data } = await axios.get(
 				`https://api.github.com/search/users?q=${userName}&per_page=10`
 			);
+			if (data.items.length === 0) {
+				setIsNoUsersFound(true);
+				setIsLoading(false);
+				return;
+			}
 			setUserData(data.items);
-			setLoading(false);
+			setIsLoading(false);
 		} catch (err) {
-			setError(true);
-			setLoading(false);
+			setIsError(true);
+			setIsLoading(false);
 		}
 	};
 
@@ -26,7 +34,12 @@ export default () => {
 			<h1>Github Repo Tracker</h1>
 			<p>A simple way to find information about github repositories</p>
 			<UserSearch onSubmit={onSubmit} />
-			<UserList userData={userData} error={error} loading={loading} />
+			<UserList
+				userData={userData}
+				error={isError}
+				loading={isLoading}
+				noUsersFound={isNoUsersFound}
+			/>
 		</main>
 	);
 };
