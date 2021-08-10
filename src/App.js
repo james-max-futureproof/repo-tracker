@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { Profile } from './pages';
+import { Footer } from './components';
 
 export default function App() {
-    return (
-        <div>
-            <h1></h1>
-        </div>
-    )
+	return (
+		<>
+			<Switch>
+				<Route exact path="/profile/:username">
+					<Profile />
+				</Route>
+			</Switch>
+			<Footer />
+		</>
+	);
 }
