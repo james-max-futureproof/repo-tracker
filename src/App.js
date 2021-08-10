@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { Landing } from './pages';
+import './global.css';
 
 export default function App() {
-    return (
-        <div>
-            <h1></h1>
-        </div>
-    )
+	return (
+		<>
+			<Switch>
+				<Route path="/">
+					<Landing />
+				</Route>
+			</Switch>
+		</>
+	);
 }
