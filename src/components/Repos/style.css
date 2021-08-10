@@ -1,5 +1,18 @@
 .repos-container {
 	width: 80%;
+	height: 40vh;
 	margin: auto;
-	background-color: gray;
+	overflow: scroll;
+}
+
+.repos-container a {
+	text-decoration: none;
+	color: black;
+}
+
+.repository {
+	padding: 15px 20px;
+	background-color: white;
+	margin-bottom: 15px;
+	border-radius: 10px;
 }

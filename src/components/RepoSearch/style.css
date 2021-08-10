@@ -1,0 +1,16 @@
+.repo-search-bar {
+	width: 80%;
+	margin: auto;
+	padding: 20px 40px;
+}
+
+.repo-search-bar input {
+	width: 100%;
+	padding: 20px;
+	border-radius: 20px;
+	border: none;
+}
+
+.repo-search-bar input:focus {
+	outline: none;
+}

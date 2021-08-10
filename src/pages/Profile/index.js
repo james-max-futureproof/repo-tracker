@@ -40,8 +40,8 @@ export default function Profile() {
 				</div>
 				<img className="profile-img" src={profileData.avatar_url} />
 			</div>
-			<div className="repos-container">
-				<Repos username={username} />
+			<div className="user-repos-container">
+				{profileData.length === 0 ? <p>No Repositories Found!</p> : <Repos username={username} />}
 			</div>
 		</>
 	);

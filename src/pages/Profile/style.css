@@ -2,21 +2,43 @@
 	width: 80%;
 	height: 30vh;
 	margin: auto;
-	background-color: gray;
+	background-color: #e1e4e8;
 	padding: 20px 40px;
 	position: relative;
 	margin-bottom: 50px;
+	border-radius: 10px;
 }
 
 .user-container .profile-img {
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 	position: absolute;
 	top: 20px;
 	right: 20px;
+	border-radius: 50%;
+	border: 4px solid #d1d5da;
 }
 
 .user-info {
 	width: 50%;
 	background-color: white;
+	border: 1px solid #d1d5da;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.user-repos-container {
+	position: relative;
+	background-color: #e1e4e8;
+	width: 80%;
+	height: 55vh;
+	margin: auto;
+	border-radius: 10px;
+}
+
+.user-repos-container p {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 42%;
 }

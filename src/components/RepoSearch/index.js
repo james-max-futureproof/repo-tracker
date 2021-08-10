@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style.css';
 
 export default function RepoSearch({ searchRepos }) {
 	const [searchTerm, setSearchTerm] = useState('');
@@ -14,9 +15,9 @@ export default function RepoSearch({ searchRepos }) {
 	};
 
 	return (
-		<div>
+		<div className="repo-search-bar">
 			<form onSubmit={handleSubmit}>
-				<input type="text" onChange={updateInput} value={searchTerm} />
+				<input type="text" onChange={updateInput} value={searchTerm} placeholder="Search..." />
 			</form>
 		</div>
 	);
