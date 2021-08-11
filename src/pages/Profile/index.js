@@ -28,11 +28,11 @@ export default function Profile() {
 	}, []);
 
 	return (
-		<>
+		<main>
 			<ProfileInfo profileData={profileData} />
 			<div className="user-repos-container">
 				{profileData.length === 0 ? <p>No Repositories Found!</p> : <Repos username={username} />}
 			</div>
-		</>
+		</main>
 	);
 }
