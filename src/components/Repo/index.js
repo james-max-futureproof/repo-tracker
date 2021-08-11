@@ -53,7 +53,11 @@ export default ({ data, isError, isLoading }) => {
 							<p>{commit.commit.committer.name}</p>
 							<p>{new Date(commit.commit.committer.date).toUTCString()}</p>
 							<p>{commit.commit.message}</p>
-							<img src={commit.author.avatar_url} alt="" />
+							{commit.author ? (
+								<img src={commit.author.avatar_url} alt="avatar image" />
+							) : (
+								<img src="../../../assets/images/default-avatar.png" alt="avatar image" />
+							)}
 						</div>
 					))}
 				</div>
