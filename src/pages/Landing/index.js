@@ -33,7 +33,9 @@ export default () => {
 	return (
 		<main>
 			<h1>Github Repo Tracker</h1>
-			<p>A simple way to find information about github repositories</p>
+			<p className="landing-description">
+				A simple way to find information about github repositories
+			</p>
 			<UserSearch onSubmit={onSubmit} />
 			<UserList
 				userData={userData}
