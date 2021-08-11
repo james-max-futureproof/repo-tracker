@@ -20,3 +20,23 @@
 .repo-search-bar input:focus {
 	outline: none;
 }
+
+.repo-search-bar input[type='submit'] {
+	color: inherit;
+	background-color: rgba(255, 255, 255, 0.644);
+	cursor: pointer;
+	transition: 0.2s;
+	transform: translate(-2px, -2px);
+	box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.644);
+}
+
+.repo-search-bar input[type='submit']:hover {
+	background-color: rgba(255, 255, 255, 0.95);
+	transform: translate(-1px, -1px);
+	box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.644);
+}
+
+.repo-search-bar input[type='submit']:active {
+	transform: none !important;
+	box-shadow: none !important;
+}

@@ -1,30 +1,9 @@
-main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background: #feac5e; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#4bc0c8,
-		#c779d0,
-		#feac5e
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#4bc0c8,
-		#c779d0,
-		#feac5e
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	min-height: 100vh;
-	color: rgb(27, 27, 27);
-}
-
 h1 {
 	font-size: 3rem;
 	padding-top: 40px;
 }
 
-p {
+.landing-description {
 	font-size: 1.5rem;
 	margin-bottom: 60px;
 }
