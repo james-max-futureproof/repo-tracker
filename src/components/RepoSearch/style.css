@@ -1,14 +1,20 @@
 .repo-search-bar {
-	width: 80%;
-	margin: auto;
-	padding: 20px 40px;
+	padding: 30px;
 }
 
+.repo-search-bar form {
+	display: flex;
+	justify-content: space-between;
+}
 .repo-search-bar input {
-	width: 100%;
-	padding: 20px;
-	border-radius: 20px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 1rem;
 	border: none;
+}
+
+.repo-search-bar input:first-child {
+	width: 70%;
 }
 
 .repo-search-bar input:focus {
