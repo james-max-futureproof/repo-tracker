@@ -6,3 +6,4 @@ export { default as UserList } from './UserList';
 export { default as UserInfo } from './UserInfo';
 export { default as ProfileInfo } from './ProfileInfo';
 export { default as Repo } from './Repo';
+export { default as Navbar } from './Navbar';
