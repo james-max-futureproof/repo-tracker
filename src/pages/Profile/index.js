@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Repos } from '../../components';
+import { Repos, ProfileInfo } from '../../components';
 
 import './style.css';
 
@@ -29,17 +29,7 @@ export default function Profile() {
 
 	return (
 		<>
-			<div className="user-container">
-				<h2>{profileData.login}</h2>
-				<div className="user-info">
-					Public Repos: {profileData.public_repos}
-					<br></br>
-					Followers: {profileData.followers}
-					<br></br>
-					Following: {profileData.following}
-				</div>
-				<img className="profile-img" src={profileData.avatar_url} />
-			</div>
+			<ProfileInfo profileData={profileData} />
 			<div className="user-repos-container">
 				{profileData.length === 0 ? <p>No Repositories Found!</p> : <Repos username={username} />}
 			</div>
