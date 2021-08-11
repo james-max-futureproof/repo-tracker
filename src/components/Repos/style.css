@@ -1,8 +1,8 @@
 .repos-container {
-	width: 80%;
-	height: 40vh;
-	margin: auto;
-	overflow: scroll;
+	padding: 0 20px;
+	max-height: 80%;
+	margin: 0 10px;
+	overflow-y: scroll;
 }
 
 .repos-container a {
@@ -12,7 +12,12 @@
 
 .repository {
 	padding: 15px 20px;
-	background-color: white;
 	margin-bottom: 15px;
 	border-radius: 10px;
+	box-shadow: 1px 2px 3px rgba(231, 231, 231, 0.644);
+	background-color: rgba(255, 255, 255, 0.644);
+}
+
+.repository h4 {
+	margin: 5px 0;
 }
