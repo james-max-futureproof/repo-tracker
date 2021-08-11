@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import defaultImage from '../../assets/images/default-avatar.png';
 import axios from 'axios';
 import './style.css';
 
@@ -56,7 +57,7 @@ export default ({ data, isError, isLoading }) => {
 							{commit.author ? (
 								<img src={commit.author.avatar_url} alt="avatar image" />
 							) : (
-								<img src="../../../assets/images/default-avatar.png" alt="avatar image" />
+								<img src={defaultImage} alt="avatar image" />
 							)}
 						</div>
 					))}
