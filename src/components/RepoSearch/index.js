@@ -18,6 +18,7 @@ export default function RepoSearch({ searchRepos }) {
 		<div className="repo-search-bar">
 			<form onSubmit={handleSubmit}>
 				<input type="text" onChange={updateInput} value={searchTerm} placeholder="Search..." />
+				<input type="submit" value="Search" />
 			</form>
 		</div>
 	);
