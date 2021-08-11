@@ -44,7 +44,7 @@ export default function Repos({ username }) {
 			<RepoSearch searchRepos={searchRepos} />
 			<div className="repos-container">
 				{userRepoList.map((repo, index) => (
-					<Link key={index} to={`/profile/${username}/repos/${repo.id}`}>
+					<Link key={index} to={`/profile/${username}/repos/${repo.name}`}>
 						<div className="repository">
 							<h4>{repo.name}</h4>
 						</div>

@@ -1,4 +1,4 @@
-.user-search form {
+.user-search {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -20,7 +20,7 @@
 	padding: 5px 10px;
 }
 
-.user-search form input:nth-child(2) {
+.user-search input:nth-child(2) {
 	margin: 20px 0;
 }
 
