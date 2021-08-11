@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
 import axios from 'axios';
+import './style.css';
 
 export default ({ data, isError, isLoading }) => {
 	const [commitHistory, setCommitHistory] = useState([]);
@@ -43,15 +43,15 @@ export default ({ data, isError, isLoading }) => {
 			) : isLoading ? (
 				<p>Loading...</p>
 			) : (
-				<div className="repository">
+				<div className="repo-info">
 					<h2>{data.name}</h2>
 					<p>Forks: {data.forks}</p>
-					<p>Issues: {data.issues}</p>
+					<p>Open issues: {data.open_issues}</p>
 					<h3>Commits:</h3>
 					{commitHistory.map((commit) => (
 						<div className="commit" key={commit.sha}>
 							<p>{commit.commit.committer.name}</p>
-							<p>{commit.commit.committer.date}</p>
+							<p>{new Date(commit.commit.committer.date).toUTCString()}</p>
 							<p>{commit.commit.message}</p>
 							<img src={commit.author.avatar_url} alt="" />
 						</div>
