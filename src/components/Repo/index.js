@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import defaultImage from '../../assets/images/default-avatar.png';
 import axios from 'axios';
 import './style.css';
 
@@ -53,7 +54,11 @@ export default ({ data, isError, isLoading }) => {
 							<p>{commit.commit.committer.name}</p>
 							<p>{new Date(commit.commit.committer.date).toUTCString()}</p>
 							<p>{commit.commit.message}</p>
-							<img src={commit.author.avatar_url} alt="" />
+							{commit.author ? (
+								<img src={commit.author.avatar_url} alt="avatar image" />
+							) : (
+								<img src={defaultImage} alt="avatar image" />
+							)}
 						</div>
 					))}
 				</div>
