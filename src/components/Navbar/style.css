@@ -1,0 +1,16 @@
+.navbar .home-link {
+	text-align: left;
+	position: fixed;
+	width: 70px;
+	top: 10px;
+	left: 10px;
+	color: black;
+}
+
+.navbar .back-button {
+	text-align: left;
+	position: fixed;
+	width: 70px;
+	top: 55px;
+	left: 10px;
+}

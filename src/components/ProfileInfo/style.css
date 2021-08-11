@@ -1,0 +1,36 @@
+.user-container {
+	min-height: 240px;
+	width: 600px;
+	margin: 40px auto 50px;
+	padding: 20px 40px;
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 2px 4px 12px rgba(231, 231, 231, 0.644);
+	background-color: rgba(255, 255, 255, 0.308);
+}
+
+.user-container h2 {
+	padding-left: 10px;
+}
+
+.user-container .profile-img {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	border-radius: 50%;
+}
+
+.user-info {
+	width: 50%;
+	box-shadow: 1px 2px 3px rgba(231, 231, 231, 0.644);
+	background-color: rgba(255, 255, 255, 0.644);
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.user-container a {
+	text-decoration: none;
+	color: black;
+}

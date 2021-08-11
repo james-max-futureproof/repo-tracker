@@ -1,0 +1,23 @@
+.repos-container {
+	padding: 0 20px;
+	height: calc(100% - 108px);
+	margin: 0 10px;
+	overflow-y: scroll;
+}
+
+.repos-container a {
+	text-decoration: none;
+	color: black;
+}
+
+.repository {
+	padding: 15px 20px;
+	margin-bottom: 15px;
+	border-radius: 10px;
+	box-shadow: 1px 2px 3px rgba(231, 231, 231, 0.644);
+	background-color: rgba(255, 255, 255, 0.644);
+}
+
+.repository h4 {
+	margin: 5px 0;
+}

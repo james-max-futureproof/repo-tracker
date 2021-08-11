@@ -1,0 +1,52 @@
+li {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	margin: 20px 0;
+	place-items: center;
+}
+
+li:first-child {
+	margin: 0 0 20px;
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 2rem;
+}
+
+img {
+	grid-column: 2/3;
+	grid-row: 1 / 3;
+	height: 200px;
+	width: 200px;
+	justify-self: end;
+	border-radius: 50%;
+}
+
+button {
+	height: fit-content;
+	width: fit-content;
+	border-radius: 5px;
+	padding: 5px 10px;
+	border: none;
+	outline: none;
+	color: inherit;
+	background-color: rgba(255, 255, 255, 0.644);
+	font-size: 1.2rem;
+	cursor: pointer;
+	transition: 0.2s;
+	transform: translate(-2px, -2px);
+	box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.644);
+}
+
+button:hover {
+	background-color: rgba(255, 255, 255, 0.95);
+	transform: translate(-1px, -1px);
+	box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.644);
+}
+
+button:active {
+	transform: none !important;
+	box-shadow: none !important;
+}
