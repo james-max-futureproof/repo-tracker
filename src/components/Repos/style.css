@@ -1,6 +1,6 @@
 .repos-container {
 	padding: 0 20px;
-	max-height: 80%;
+	height: calc(100% - 108px);
 	margin: 0 10px;
 	overflow-y: scroll;
 }
