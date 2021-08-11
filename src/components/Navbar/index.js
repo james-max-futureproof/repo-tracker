@@ -5,8 +5,6 @@ import './style.css';
 export default function Navbar() {
 	const history = useHistory();
 
-	console.log(history.location.pathname);
-
 	const goToPrevious = () => {
 		history.goBack();
 	};
