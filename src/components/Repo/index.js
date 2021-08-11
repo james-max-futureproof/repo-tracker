@@ -45,7 +45,9 @@ export default ({ data, isError, isLoading }) => {
 				<p>Loading...</p>
 			) : (
 				<div className="repo-info">
-					<h2>{data.name}</h2>
+					<a href={data.html_url} target="_blank">
+						<h2>{data.name}</h2>
+					</a>
 					<p>Forks: {data.forks}</p>
 					<p>Open issues: {data.open_issues}</p>
 					<h3>Commits:</h3>
