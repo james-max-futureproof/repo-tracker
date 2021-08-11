@@ -6,21 +6,18 @@ export default ({ data, isError, isLoading }) => {
 	const [commitHistory, setCommitHistory] = useState([]);
 
 	useEffect(() => {
-		const fetchCommits = async () => {
+		const fetchCommits = async (url) => {
 			try {
-				if (!data) {
-					console.log(data);
-					console.log('escape cause of data is false');
-					return;
-				}
-				const { newData: data } = await axios.get(`${cleanupUrl(data.commits_url, '{/sha}')}`);
-				console.log(newData, data);
+				const { data: newData } = await axios.get(`${cleanupUrl(url, '{/sha}')}`);
 				setCommitHistory(newData);
 			} catch (err) {
 				console.log(err);
 			}
 		};
-		fetchCommits();
+
+		if (data.commits_url) {
+			fetchCommits(data.commits_url);
+		}
 		return () => {
 			isLoading = false;
 		};
@@ -47,16 +44,17 @@ export default ({ data, isError, isLoading }) => {
 				<p>Loading...</p>
 			) : (
 				<div className="repository">
-					<p>{data.name}</p>
-					Forks: {data.forks}
-					Issues: {data.issues}
-					Commits:
+					<h2>{data.name}</h2>
+					<p>Forks: {data.forks}</p>
+					<p>Issues: {data.issues}</p>
+					<h3>Commits:</h3>
 					{commitHistory.map((commit) => (
-						<>
-							<p>{commit.commit.commiter.name}</p>
-							<p>{commit.commit.commiter.date}</p>
+						<div className="commit" key={commit.sha}>
+							<p>{commit.commit.committer.name}</p>
+							<p>{commit.commit.committer.date}</p>
 							<p>{commit.commit.message}</p>
-						</>
+							<img src={commit.author.avatar_url} alt="" />
+						</div>
 					))}
 				</div>
 			)}
