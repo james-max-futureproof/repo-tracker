@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { ProfileInfo } from '../../components';
+import { ProfileInfo, Repo } from '../../components';
 import './style.css';
 
 export default () => {
@@ -50,6 +50,7 @@ export default () => {
 	return (
 		<main>
 			<ProfileInfo profileData={profileData} />
+			<Repo data={repoData} isLoading={isRepoDataLoading} isError={isRepoError} />
 		</main>
 	);
 };
