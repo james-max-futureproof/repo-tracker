@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react';
-
 import axios from 'axios';
+import './style.css';
 
 export default ({ data, isError, isLoading }) => {
 	const [commitHistory, setCommitHistory] = useState([]);
 
 	useEffect(() => {
-		const fetchCommits = async () => {
+		const fetchCommits = async (url) => {
 			try {
-				if (!data) {
-					console.log(data);
-					console.log('escape cause of data is false');
-					return;
-				}
-				const { newData: data } = await axios.get(`${cleanupUrl(data.commits_url, '{/sha}')}`);
-				console.log(newData, data);
+				const { data: newData } = await axios.get(`${cleanupUrl(url, '{/sha}')}`);
 				setCommitHistory(newData);
 			} catch (err) {
 				console.log(err);
 			}
 		};
-		fetchCommits();
+
+		if (data.commits_url) {
+			fetchCommits(data.commits_url);
+		}
 		return () => {
 			isLoading = false;
 		};
@@ -46,17 +43,18 @@ export default ({ data, isError, isLoading }) => {
 			) : isLoading ? (
 				<p>Loading...</p>
 			) : (
-				<div className="repository">
-					<p>{data.name}</p>
-					Forks: {data.forks}
-					Issues: {data.issues}
-					Commits:
+				<div className="repo-info">
+					<h2>{data.name}</h2>
+					<p>Forks: {data.forks}</p>
+					<p>Open issues: {data.open_issues}</p>
+					<h3>Commits:</h3>
 					{commitHistory.map((commit) => (
-						<>
-							<p>{commit.commit.commiter.name}</p>
-							<p>{commit.commit.commiter.date}</p>
+						<div className="commit" key={commit.sha}>
+							<p>{commit.commit.committer.name}</p>
+							<p>{new Date(commit.commit.committer.date).toUTCString()}</p>
 							<p>{commit.commit.message}</p>
-						</>
+							<img src={commit.author.avatar_url} alt="" />
+						</div>
 					))}
 				</div>
 			)}

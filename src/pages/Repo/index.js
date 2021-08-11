@@ -30,7 +30,7 @@ export default () => {
 				if (data.message && data.message === 'Not found') {
 					throw new Error(data.message);
 				}
-				console.log(data);
+				// console.log(data);
 				setIsRepoDataLoading(false);
 				setRepoData(data);
 			} catch (err) {
